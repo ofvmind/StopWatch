@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jersey 10", serif;
+  font-weight: 400;
+  font-style: normal;
+  transition: 0.1s;
+}
+
+body {
+  background-color: #000;
+  color: #ccc;
+}
+
+.max-height {
+  height: 100vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  position: relative;
+  width: 400px;
+}
+
+.stopwatch {
+  gap: 30px;
+  .timer {
+    span {
+      margin: 0 5px;
+      font-size: 30px;
+    }
+    .numbers {
+      font-size: 45px;
+      width: 55px;
+      height: 55px;
+      background-color: #111;
+      color: #ccc;
+    }
+  }
+  .timer.active > .numbers {
+    background-color: #ccc;
+    color: #000;
+  }
+  .buttons {
+    gap: 10px;
+    button {
+      cursor: pointer;
+      font-size: 22.5px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      background-color: #ccc;
+      width: 65px;
+      height: 65px;
+    }
+    button:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+.records {
+  justify-content: flex-start;
+  position: absolute;
+  top: 180px;
+  width: 200px;
+  height: 125px;
+  padding-left: 15px;
+  overflow-y: scroll;
+  .record {
+    display: flex;
+    animation: record-show 0.2s;
+    font-size: 30px;
+  }
+}
+.records::-webkit-scrollbar {
+  width: 12.5px;
+}
+.records::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+@keyframes record-show {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+.record-btn {
+  position: absolute;
+  top: 325px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 25px;
+}
+.record-btn:active {
+  transform: scale(0.9);
+}
